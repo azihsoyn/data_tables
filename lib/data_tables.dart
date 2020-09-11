@@ -45,6 +45,8 @@ class NativeDataTable extends StatelessWidget {
     this.noItems,
     this.mobileIsLoading,
     this.mobileSlivers,
+    this.rowHeight,
+    this.shrinkWrap = false,
     this.alwaysShowDataTable = false,
   });
 
@@ -72,6 +74,8 @@ class NativeDataTable extends StatelessWidget {
     this.mobileIsLoading,
     this.mobileSlivers,
     this.alwaysShowDataTable = false,
+    this.rowHeight,
+    this.shrinkWrap,
   }) : rows = _buildRows(itemCount, itemBuilder);
 
   final int sortColumnIndex;
@@ -100,6 +104,10 @@ class NativeDataTable extends StatelessWidget {
   final List<Widget> actions, selectedActions;
 
   final int mobileFetchNextRows;
+
+  final int rowHeight;
+
+  final bool shrinkWrap;
 
   final RefreshCallback onRefresh;
 
@@ -135,7 +143,7 @@ class NativeDataTable extends StatelessWidget {
             sortAscending: sortAscending,
             onSelectAll: onSelectAll,
             columns: columns,
-            shrinkWrap: false,
+            shrinkWrap: shrinkWrap,
             rowCountApproximate: rowCountApproximate,
             actions: []
               ..addAll(actions)
