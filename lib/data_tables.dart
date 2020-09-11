@@ -48,6 +48,7 @@ class NativeDataTable extends StatelessWidget {
     this.rowHeight,
     this.shrinkWrap = false,
     this.alwaysShowDataTable = false,
+    this.dataRowHeight = kMinInteractiveDimension,
   });
 
   NativeDataTable.builder({
@@ -76,6 +77,7 @@ class NativeDataTable extends StatelessWidget {
     this.alwaysShowDataTable = false,
     this.rowHeight,
     this.shrinkWrap,
+    this.dataRowHeight = kMinInteractiveDimension,
   }) : rows = _buildRows(itemCount, itemBuilder);
 
   final int sortColumnIndex;
@@ -124,6 +126,8 @@ class NativeDataTable extends StatelessWidget {
 
   final bool alwaysShowDataTable;
 
+  final double dataRowHeight;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -144,6 +148,7 @@ class NativeDataTable extends StatelessWidget {
             onSelectAll: onSelectAll,
             columns: columns,
             shrinkWrap: shrinkWrap,
+            dataRowHeight: dataRowHeight,
             rowCountApproximate: rowCountApproximate,
             actions: []
               ..addAll(actions)

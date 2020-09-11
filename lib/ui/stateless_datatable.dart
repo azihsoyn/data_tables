@@ -69,6 +69,7 @@ class StatelessDataTable extends StatelessWidget {
       defaultRowsPerPage * 5,
       defaultRowsPerPage * 10
     ],
+    this.dataRowHeight = kMinInteractiveDimension,
     this.onRowsPerPageChanged,
     this.dragStartBehavior = DragStartBehavior.down,
   })  : assert(header != null),
@@ -169,6 +170,8 @@ class StatelessDataTable extends StatelessWidget {
   final DragStartBehavior dragStartBehavior;
 
   final int firstRowIndex;
+
+  final double dataRowHeight;
 
   final bool rowCountApproximate;
 
@@ -372,6 +375,7 @@ class StatelessDataTable extends StatelessWidget {
                     sortColumnIndex: sortColumnIndex,
                     sortAscending: sortAscending,
                     onSelectAll: onSelectAll,
+                    dataRowHeight: dataRowHeight,
                     rows: rows,
                   );
                 },
@@ -449,6 +453,7 @@ class StatelessDataTable extends StatelessWidget {
                         sortColumnIndex: sortColumnIndex,
                         sortAscending: sortAscending,
                         onSelectAll: onSelectAll,
+                        dataRowHeight: dataRowHeight,
                         rows: _getRows(firstRowIndex, rowsPerPage)),
                   ),
                 ],
