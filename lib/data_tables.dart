@@ -48,6 +48,7 @@ class NativeDataTable extends StatelessWidget {
     this.rowHeight,
     this.shrinkWrap = false,
     this.alwaysShowDataTable = false,
+    this.showCheckboxColumn = true,
     this.dataRowHeight = kMinInteractiveDimension,
   });
 
@@ -75,6 +76,7 @@ class NativeDataTable extends StatelessWidget {
     this.mobileIsLoading,
     this.mobileSlivers,
     this.alwaysShowDataTable = false,
+    this.showCheckboxColumn = true,
     this.rowHeight,
     this.shrinkWrap,
     this.dataRowHeight = kMinInteractiveDimension,
@@ -128,6 +130,8 @@ class NativeDataTable extends StatelessWidget {
 
   final double dataRowHeight;
 
+  final bool showCheckboxColumn;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -150,6 +154,7 @@ class NativeDataTable extends StatelessWidget {
             shrinkWrap: shrinkWrap,
             dataRowHeight: dataRowHeight,
             rowCountApproximate: rowCountApproximate,
+            showCheckboxColumn: showCheckboxColumn,
             actions: []
               ..addAll(actions)
               ..add(Container(

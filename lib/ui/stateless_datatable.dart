@@ -63,6 +63,7 @@ class StatelessDataTable extends StatelessWidget {
     this.rowsPerPage = defaultRowsPerPage,
     this.handlePrevious,
     this.handleNext,
+    this.showCheckboxColumn = true,
     this.availableRowsPerPage = const <int>[
       defaultRowsPerPage,
       defaultRowsPerPage * 2,
@@ -174,6 +175,8 @@ class StatelessDataTable extends StatelessWidget {
   final double dataRowHeight;
 
   final bool rowCountApproximate;
+
+  final bool showCheckboxColumn;
 
   final Map<int, DataRow> _rows = <int, DataRow>{};
 
@@ -376,6 +379,7 @@ class StatelessDataTable extends StatelessWidget {
                     sortAscending: sortAscending,
                     onSelectAll: onSelectAll,
                     dataRowHeight: dataRowHeight,
+                    showCheckboxColumn: showCheckboxColumn,
                     rows: rows,
                   );
                 },
@@ -454,6 +458,7 @@ class StatelessDataTable extends StatelessWidget {
                         sortAscending: sortAscending,
                         onSelectAll: onSelectAll,
                         dataRowHeight: dataRowHeight,
+                        showCheckboxColumn: showCheckboxColumn,
                         rows: _getRows(firstRowIndex, rowsPerPage)),
                   ),
                 ],
