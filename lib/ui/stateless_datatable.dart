@@ -81,7 +81,7 @@ class StatelessDataTable extends StatelessWidget {
             (sortColumnIndex >= 0 && sortColumnIndex < columns.length)),
         assert(sortAscending != null),
         assert(rowsPerPage != null),
-        assert(rowsPerPage > 0),
+        assert(rowsPerPage >= 0),
         assert(() {
           if (onRowsPerPageChanged != null)
             assert(availableRowsPerPage != null &&
