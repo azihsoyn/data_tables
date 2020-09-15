@@ -78,7 +78,7 @@ class NativeDataTable extends StatelessWidget {
     this.alwaysShowDataTable = false,
     this.showCheckboxColumn = true,
     this.rowHeight,
-    this.shrinkWrap,
+    this.shrinkWrap = false,
     this.dataRowHeight = kMinInteractiveDimension,
   }) : rows = _buildRows(itemCount, itemBuilder);
 
